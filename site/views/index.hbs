@@ -1,12 +1,4 @@
-{{!-- 
-    Citation for page:
-    Date: 05/18/2024
-    Adapted from:
-    Source URL: https://github.com/osu-cs340-ecampus/nodejs-starter-app/blob/main/Step%205%20-%20Adding%20New%20Data/views/index.hbs
-    --}}
-    
-    
-    <!-- views/index.hbs -->
+<!-- views/index.hbs -->
     
     <div class="home-body">
         <h2>About Me</h2>
@@ -34,25 +26,34 @@
             web developer</strong>, hence my showcasing it here on this website, which displays projects 
             I have developed, both alone and as a team.
             <br><br>
-            My goal is to work with a team that mirrors my goals, where I can utilize my strengths that 
-            I have so heavily invested in, and still grow as a person and a professional.
+            My goal is to work with a team that mirrors my goals, where I can utilize my strengths and 
+            still grow, as I am passionate about learning and self-growth.
         </p>
 
         <h2>Projects</h2>
-        <p>
-            <ul>
-                <li>
-                    An eCommerce website I built for a small business.
-                </li>
-                <li>
-                    A hiking app that I built with a classmate that tracks outdoor activities for users.
-                </li>
-                <li>
-                    Oceanographic research project that attempts to describe turbulence intensity using a novel approach.
-                </li>
-                <button><a href="/projects">Go to projects page</a></button>
-            </ul>
-        </p>
+        
+        <div id="index-projects">
+            <figure>
+                <a href="/projects?port={{ldblm_port}}&project=ldblm">
+                    <img src="/img/ldblm_screenshot.png" alt="Screenshot of ldblm website">
+                </a>
+                <figcaption>An eCommerce website small business</figcaption>
+            </figure>
+
+            <figure>
+                <a href="/projects?port={{byte_hikers_port}}&project=byte_hikers">
+                    <img src="/img/byte_hikers_screenshot.png" alt="Screenshot of Byte Hikers application">
+                </a>
+                <figcaption>A hiking app that was built with a classmate that tracks outdoor activities for users</figcaption>
+            </figure>
+
+            <figure>
+                <a href="/projects?port={{ocean_port}}&project=ocean">
+                    <img src="/img/oceanography_poster.jpg" alt="Burkely Pettijohn in front of his scientific poster">
+                </a>
+                <figcaption>Oceanographic research project that attempts to describe turbulence intensity using a novel approach</figcaption>
+            </figure>
+        </div>
 
         <h2>Resume</h2>
         <p>
@@ -60,6 +61,3 @@
         </p>
     
     </div>
-
-    <script src="/js/show-project.js"></script>
-    

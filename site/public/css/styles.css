@@ -178,7 +178,24 @@ th, td {
     transform: scale(1.05);
 }
 
-/* Form Checkbox Styles */
+#index-projects {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;}
+
+figure img {
+    width: 100%;
+}
+
+figure {
+    display: block;
+    text-align: center;
+    width: 35%;
+    border: #7961ff solid 2px;
+    border-radius: 2px;
+    box-shadow: solid var(--secondary) 5px;
+}
+
 .figure-checkbox {
     display: none;
 }

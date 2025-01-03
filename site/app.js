@@ -30,7 +30,6 @@ const ocean_port = process.env.ocean_port;
 app.get('/', function(req, res) {
     res.render('index', { 
         title: 'Burkely Pettijohn - Home',
-        source: source,
         ldblm_port: ldblm_port,
         byte_hikers_port: byte_hikers_port,
         ocean_port: ocean_port
@@ -40,7 +39,6 @@ app.get('/', function(req, res) {
 app.get('/projects', function(req, res) {
     res.render('projects', {
         title: 'Burkely Pettijohn - Projects',
-        source: source,
         ldblm_port: ldblm_port,
         byte_hikers_port: byte_hikers_port,
         ocean_port: ocean_port

@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/burkelyp/portfolio#readme",
   "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1",
     "forever": "^4.0.3"
   }
 }

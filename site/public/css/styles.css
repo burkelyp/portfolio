@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --primary: #7961ff;
+    --secondary: #4e4e4e;
+    --accent: #f9a825;
+    --light: #ffffff;
+    --background: #f3f4f6;
+    --text: #333333;
+    --border: #e0e0e0;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.8em;
+    font-size: 16px;
+}
+
+h1 {
+    font-family: 'Roboto', serif;
+    font-size: 40px;
+}
+
+h2, h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: 'Roboto', serif;
+    font-style: italic;
+}
+
+.center-container {
+    flex: 1;
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+    padding: 3rem;
+    padding-bottom: 60px;
+}
+
+.main {
+    background-color: var(--background);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px;
+    background-color: var(--primary);
+    color: var(--light);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    width: 90px;
+    height: 90px;
+}
+
+nav#mainNav {
+    background-color: var(--light);
+    padding: 15px 0;
+    border-bottom: 2px solid var(--border);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+nav#mainNav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav#mainNav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav#mainNav ul li a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: 600;
+    padding: 12px 18px;
+    display: block;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+nav#mainNav ul li a:hover,
+nav#mainNav ul li a.active {
+
+    background-color: var(--primary);
+    color: var(--light);
+    transform: scale(1.05);
+}
+
+#aboutButtons, #aboutButtons * {
+    color: var(--secondary);
+}
+
+#creatorButton, #statementButton, #faqButton {
+    padding: 10px 20px;
+    border: 2px solid var(--secondary);
+    border-radius: 8px;
+    margin: 10px 0;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#creatorButton:hover, #statementButton:hover, #faqButton:hover {
+    background-color: var(--primary);
+    color: var(--light);
+    transform: scale(1.05);
+}
+
+table, th, td {
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+th, td {
+    font-weight: 500;
+}
+
+#totals {
+    padding: 20px;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    background-color: var(--light);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    margin: 20px auto;
+}
+
+#totals ul {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+#totals button, #top-purchase-button, #customButton {
+    margin-top: 20px;
+    padding: 14px 20px;
+    font-size: 16px;
+    background-color: var(--primary);
+    color: var(--light);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#totals button:hover, #top-purchase-button:hover, #customButton:hover {
+    background-color: #e65100;
+    transform: scale(1.05);
+}
+
+/* Form Checkbox Styles */
+.figure-checkbox {
+    display: none;
+}
+
+.figure-label {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.figure-checkbox:checked + .figure-label {
+    background-color: var(--primary);
+    color: var(--light);
+    border: 2px solid var(--primary);
+}
+
+.figure-label:hover {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.figure-checkbox:focus + .figure-label {
+    outline: 2px solid var(--primary);
+}
+
+iframe {
+    align-self: center;
+}
+
+/*
+Super bland professional
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+    --primary: #007bff;
+    --secondary: #333333;
+    --accent: #edc84b;
+    --light: #f4f4f4;
+    --background: #fafafa;
+    --text: #1f1f1f;
+    --border: #e0e0e0;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.7em;
+    font-size: 16px;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.center-container {
+    flex: 1;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 3rem;
+    padding-bottom: 60px;
+}
+
+.main {
+    background-color: var(--background);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 8px;
+}
+
+header img {
+    width: 80px;
+    height: 80px;
+}
+
+nav#mainNav {
+    background-color: var(--light);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+nav#mainNav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav#mainNav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav#mainNav ul li a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: 500;
+    padding: 8px 15px;
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav#mainNav ul li a:hover {
+    color: white;
+    background-color: var(--primary);
+    transform: scale(1.05);
+}
+
+#aboutButtons, #aboutButtons * {
+    color: var(--secondary);
+}
+
+#creatorButton, #statementButton, #faqButton {
+    padding: 8px 16px;
+    border: 1px solid var(--secondary);
+    border-radius: 5px;
+    margin: 10px 0;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#creatorButton:hover, #statementButton:hover, #faqButton:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: scale(1.05);
+}
+
+table, th, td {
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+}
+
+th, td {
+    font-weight: 500;
+}
+
+#totals {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    margin: 20px auto;
+    background-color: white;
+}
+
+#totals ul {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+#totals button, #top-purchase-button, #customButton {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#totals button:hover, #top-purchase-button:hover, #customButton:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.figure-checkbox {
+    display: none;
+}
+
+.figure-label {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.figure-checkbox:checked + .figure-label {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+}
+
+.figure-label:hover {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.figure-checkbox:focus + .figure-label {
+    outline: 2px solid #007bff;
+}
+*/

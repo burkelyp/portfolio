@@ -146,42 +146,21 @@ th, td {
     font-weight: 500;
 }
 
-#totals {
-    padding: 20px;
-    border: 2px solid var(--primary);
-    border-radius: 10px;
-    background-color: var(--light);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-    max-width: 350px;
-    margin: 20px auto;
-}
-
-#totals ul {
-    margin: 10px 0;
-    font-size: 16px;
-}
-
-#totals button, #top-purchase-button, #customButton {
-    margin-top: 20px;
-    padding: 14px 20px;
-    font-size: 16px;
-    background-color: var(--primary);
-    color: var(--light);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#totals button:hover, #top-purchase-button:hover, #customButton:hover {
-    background-color: #e65100;
-    transform: scale(1.05);
-}
-
 #index-projects {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;}
+    justify-content: space-around;
+}
+
+#show-project {
+    display: flex;
+    justify-content: space-around;
+}
+
+.iframes {
+    display: flex;
+    justify-content: space-around;
+}
 
 figure img {
     width: 100%;

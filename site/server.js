@@ -16,10 +16,10 @@ app.set('view engine', '.hbs');                     // use handlebars engine for
 // Load variables
 require("dotenv").config()
 const source = process.env.source;
-const port = process.env.port;
-const ldblm_port = process.env.ldblm_port;
-const byte_hikers_port = process.env.byte_hikers_port;
-const ocean_port = process.env.ocean_port;
+const port = process.env.PORT || 8080;
+const ldblm_site = process.env.ldblm_site;
+const byte_hikers_site = process.env.byte_hikers_site;
+const oceanography_site = process.env.oceanography_site;
 
 
 /*
@@ -30,24 +30,32 @@ const ocean_port = process.env.ocean_port;
 app.get('/', function(req, res) {
     res.render('index', { 
         title: 'Burkely Pettijohn - Home',
-        ldblm_port: ldblm_port,
-        byte_hikers_port: byte_hikers_port,
-        ocean_port: ocean_port
+        ldblm_site: ldblm_site,
+        byte_hikers_site: byte_hikers_site,
+        oceanography_site: oceanography_site
     });
 });
 
 app.get('/projects', function(req, res) {
     res.render('projects', {
         title: 'Burkely Pettijohn - Projects',
-        ldblm_port: ldblm_port,
-        byte_hikers_port: byte_hikers_port,
-        ocean_port: ocean_port
+        ldblm_site: ldblm_site,
+        byte_hikers_site: byte_hikers_site,
+        oceanography_site: oceanography_site
+    });
+});
+
+app.get('/api/projects/', function(req, res) {
+    res.json({
+        ldblm: ldblm_site,
+        byte_hikers: byte_hikers_site,
+        ocean: oceanography_site
     });
 });
 
 app.get('/resume', function(req, res) {
     res.render('resume', {
-        title: 'Burkely Pettijohn - Resume' //, resume: resume
+        title: 'Burkely Pettijohn - Resume'
     });
 });
 

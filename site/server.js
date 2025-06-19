@@ -17,6 +17,8 @@ app.set('view engine', '.hbs');                     // use handlebars engine for
 require("dotenv").config()
 const source = process.env.source;
 const port = process.env.PORT || 8080;
+
+const projects = require('./projects')
 const ldblm_site = process.env.ldblm_site;
 const byte_hikers_site = process.env.byte_hikers_site;
 const oceanography_site = process.env.oceanography_site;
@@ -28,35 +30,31 @@ const oceanography_site = process.env.oceanography_site;
 
 // INDEX PAGE - GET route
 app.get('/', function(req, res) {
-    res.render('index', { 
+    res.render('index', {
         title: 'Burkely Pettijohn - Home',
-        ldblm_site: ldblm_site,
-        byte_hikers_site: byte_hikers_site,
-        oceanography_site: oceanography_site
+        projects: projects
     });
 });
 
+// PROJECTS PAGE - GET
 app.get('/projects', function(req, res) {
     res.render('projects', {
         title: 'Burkely Pettijohn - Projects',
-        ldblm_site: ldblm_site,
-        byte_hikers_site: byte_hikers_site,
-        oceanography_site: oceanography_site
+        projects: projects
     });
 });
 
-app.get('/api/projects/', function(req, res) {
-    res.json({
-        ldblm: ldblm_site,
-        byte_hikers: byte_hikers_site,
-        ocean: oceanography_site
-    });
-});
-
-app.get('/resume', function(req, res) {
-    res.render('resume', {
-        title: 'Burkely Pettijohn - Resume'
-    });
+// PROJECT PAGE - GET
+app.get('/projects/:project_id', function(req, res) {
+    const project_id = req.params.project_id
+    if (!projects[project_id]) {
+        return res.status(404).send('Project not found');
+    } else {
+        res.render('project', {
+            title: 'Burkely Pettijohn - Projects',
+            project: projects[project_id]
+        });
+    }
 });
 
 

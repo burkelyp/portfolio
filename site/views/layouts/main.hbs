@@ -14,26 +14,54 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
         <link rel="manifest" href="/favicon_io/site.webmanifest">
     </head>
-    <body class="center-container">
-        <header>
-            <img src="/favicon_io/android-chrome-192x192.png" 
-                alt=""/>
-            <h1>Burkely Pettijohn - Portfolio</h1>
-        </header>
+    <div class="grid-layout">
+        <body>
+            <header>
+                <h1>Burkely Pettijohn</h1>
+                <h2>Software Engineer</h2>
+            </header>
 
-        <nav id="mainNav">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/resume">Resume</a></li>
-            </ul>
-        </nav>
-        
-        <main class="main">
-            {{{body}}}
-        </main>
-    </body>
-    <footer>
-        <p>&copy; 2025 Burkely Pettijohn</p>
-    </footer>
+            <nav>
+                <ul>
+                    <li><a href="/#about-me" class="nav-link">About Me</a></li>
+                    <li><a href="/#projects" class="nav-link">Projects</a></li>
+                    <li><a href="/#skills" class="nav-link">Skills</a></li>
+                </ul>
+            </nav>
+
+            <div id="contact">
+                <a href="https://www.linkedin.com/in/burkelyp" target='_blank' rel='noopener noreferrer'>
+                    <div class="contact_logo">
+                        <img src="/img/linkedin_logo.png" alt="LinkedIn logo and link">
+                        <span>LinkedIn</span>
+                    </div>
+                </a>        
+                <a href="https://github.com/burkelyp/" target='_blank' rel='noopener noreferrer'>
+                    <div class="contact_logo">
+                        <img src="/img/github_logo.png" alt="GitHub logo and link">
+                        <span>GitHub</span>
+                    </div>
+                </a>
+                <a href="mailto:burkelypettijohn@gmail.com" target='_blank' rel='noopener noreferrer'>
+                    <div class="contact_logo">
+                        <img src="/img/email_logo.png" alt="eMail logo and link">
+                        <span>eMail</span>
+                    </div>
+                </a>
+                <a href="/pdf/resume.pdf" target='_blank' rel='noopener noreferrer'>
+                    <div class="contact_logo">
+                        <img src="/img/resume_logo.png" alt="Resume logo and link">
+                        <span>Resume</span>
+                    </div>
+                </a>
+            </div>
+
+            <main>
+                {{{body}}}
+            </main>
+        </body>
+        <footer>
+            <p>&copy; 2025 Burkely Pettijohn</p>
+        </footer>
+    </div>
 </html>

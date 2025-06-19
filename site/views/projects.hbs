@@ -1,24 +1,27 @@
-<h2>Projects</h2>
-<div id="project_list">
-    <ul>
-        <li id="ldblm">
-            <button onclick="show_project('ldblm')">Little Dreamer Big Leader Mobiles</button>
-            An eCommerce website I built for a small business.
-        </li>
-        <li id="byte_hikers">
-            <button onclick="show_project('byte_hikers')">Byte Hikers</button>
-            A hiking app that I built with a classmate that tracks outdoor activities for users.
-        </li>
-        <li id="ocean">
-            <button onclick="show_project('ocean')">Undergraduate Research Project</button>
-            Oceanographic research project that attempts to describe turbulence intensity with a novel approach.
-        </li>
-    </ul>
+<div id="projects">
+    <h2>Projects</h2>
+    <table id="project_list">
+        <tbody>
+            {{#each projects}}
+            <tr>
+                <td>
+                    <div class="project_description">
+                        <h2>{{this.title}} - {{this.year}}</h2>
+                        <h3>{{this.short_description}}</h3>
+                        <ul>Features:
+                            {{#each this.features}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </td>
+                <td class="project_image">
+                    <a href="{{this.site}}" target='_blank' rel='noopener noreferrer'>
+                        <img src="{{this.img_path}}">
+                    </a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
 </div>
-
-<p id="about-project"></p>
-<div class="iframes">
-    <iframe id="project" frameBorder="0"></iframe>
-</div>
-
-<script src="/js/show-project.js"></script>

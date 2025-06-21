@@ -7,7 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="noindex,noarchive, nofollow" />
         <title>{{title}}</title>
-        <script src="/js/nav.js"></script>
         <link rel='stylesheet' type='text/css' media='screen' href='/css/styles.css'>
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
@@ -18,14 +17,14 @@
         <body>
             <header>
                 <h1>Burkely Pettijohn</h1>
-                <h2>Software Engineer</h2>
+                <h3>Software Engineer</h3>
             </header>
 
             <nav>
                 <ul>
-                    <li><a href="/#about-me" class="nav-link">About Me</a></li>
-                    <li><a href="/#projects" class="nav-link">Projects</a></li>
-                    <li><a href="/#skills" class="nav-link">Skills</a></li>
+                    {{#each headers}}
+                    <li><a href="{{this.link}}" class="nav-link">{{this.name}}</a></li>
+                    {{/each}}
                 </ul>
             </nav>
 

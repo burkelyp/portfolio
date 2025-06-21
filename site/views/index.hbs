@@ -1,7 +1,7 @@
 <!-- views/index.hbs -->
 
 <div id="about-me" class="observed-section">
-    <h3>About Me</h3>
+    <h2>About Me</h2>
     <p>
         I earned a <strong>Bachelor of Science in Marine Science</strong> from Texas A&M, with a
         focus in physical oceanography. I completed an undergraduate thesis on turbulence in water
@@ -29,14 +29,15 @@
 </div>
 
 <div id="projects" class="observed-section">
-    <h3>Projects</h3>
+    <h2>Projects</h2>
     <table id="project_list">
         <tbody>
             {{#each projects}}
             <tr>
                 <td class="project_image">
-                    <a href="{{this.site}}" target='_blank' rel='noopener noreferrer'>
-                        <img src="{{this.img_path}}">
+                    <a href="{{this.site}}"
+                    {{#if this.new_tab}}target="_blank" rel="noopener noreferrer"{{/if}}>
+                        <img src="{{this.img_path}}" alt="{{this.title}} image">
                     </a>
                 </td>
                 <td>
@@ -45,7 +46,7 @@
                         <p>{{this.description}}</p>
                         <ul>
                             {{#each this.software}}
-                            <li><img src={{this.src}} alt={{this.alt}} height="35px"></li>
+                            <li><img src="img/{{this}}_logo.png" alt="{{this}} logo" height="35px"></li>
                             {{/each}}
                         </ul>
                     </div>
@@ -56,21 +57,35 @@
     </table>
 </div>
 
+<div id="experience" class="observed-section">
+    <h2>Experience</h2>
+    <table id="job_list">
+        <tbody>
+            {{#each jobs}}
+            <tr>
+                <td>
+                    <div class="job_dates">
+                        <h4>{{this.dates}}</h4>
+                    </div>
+                </td>
+                <td>
+                    <div class="job_details">
+                        <h4>{{this.title}} - {{this.employer}}</h4>
+                        <span>{{this.description}}</span>
+                    </div>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
 <div id="skills" class="observed-section">
-    <h3>Skills</h3>
+    <h2>Skills</h2>
     <ul>
-        <li><img src="img/python_logo.png" alt="Python logo" height="35px">Python</li>
-        <li><img src="img/matlab_logo.png" alt="MATLAB logo" height="35px">MATLAB</li>
-        <li><img src="img/sql_logo.png" alt="SQL logo" height="35px">SQL</li>
-        <li><img src="img/cpp_logo.png" alt="C++ logo" height="35px">C/C++</li>
-        <li><img src="img/js_logo.png" alt="JavaScript logo" height="35px">JavaScript</li>
-        <li><img src="img/node_logo.png" alt="Node JS logo" height="35px">Node JS</li>
-        <li><img src="img/express_logo.png" alt="Express logo" height="35px">Express</li>
-        <li><img src="img/handlebars_logo.png" alt="Handlebars logo" height="35px">Handlebars</li>
-        <li><img src="img/css_logo.png" alt="CSS logo" height="35px">CSS</li>
-        <li><img src="img/flask_logo.png" alt="Python Flask logo" height="35px">Python Flask</li>
-        <li><img src="img/gcloud_logo.png" alt="Google Cloud logo" height="35px">Google Cloud</li>
-        <li><img src="img/oauth_logo.png" alt="OAuth logo" height="35px">Oauth2.0</li>
+        {{#each skills}}
+        <li><img src="{{this.src}}" alt="{{this.alt}}" height="35px">{{this.name}}</li>
+        {{/each}}
     </ul>
 </div>
 

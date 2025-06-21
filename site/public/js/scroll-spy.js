@@ -1,25 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".observed-section");
   const navLinks = document.querySelectorAll(".nav-link");
+  const main = document.querySelector('main');
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      let visibleSections = entries
-        .filter(entry => entry.isIntersecting)
-        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+  const topLink = document.querySelector('a[href="/#about-me"]');
+  topLink.classList.add("active");
 
-      if (visibleSections.length > 0) {
-        const id = visibleSections[0].target.id;
+  main.addEventListener('scroll', () => {
+      let currentSectionId = 'about-me';
 
-        navLinks.forEach(link => {
-          link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
-        });
-      }
-    },
-    {
-      threshold: 0.5, // section must be 50% visible
-    }
-  );
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        
+        if (main.scrollTop >= sectionTop - 200) {
+            currentSectionId = section.id;
+        }
+      });
 
-  sections.forEach(section => observer.observe(section));
+      navLinks.forEach(link => {
+        const hrefId = link.getAttribute('href').split('#')[1];
+
+          link.classList.remove('active');
+          if (hrefId === currentSectionId) {
+              link.classList.add('active');
+          }
+      });
+  });
 });

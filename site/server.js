@@ -18,10 +18,10 @@ require("dotenv").config()
 const source = process.env.source;
 const port = process.env.PORT || 8080;
 
-const projects = require('./projects')
-const ldblm_site = process.env.ldblm_site;
-const byte_hikers_site = process.env.byte_hikers_site;
-const oceanography_site = process.env.oceanography_site;
+const data = require('./database');
+const projects = data["projects"]
+const jobs = data["jobs"]
+const skills = data["skills"]
 
 
 /*
@@ -31,28 +31,48 @@ const oceanography_site = process.env.oceanography_site;
 // INDEX PAGE - GET route
 app.get('/', function(req, res) {
     res.render('index', {
-        title: 'Burkely Pettijohn - Home',
-        projects: projects
-    });
-});
-
-// PROJECTS PAGE - GET
-app.get('/projects', function(req, res) {
-    res.render('projects', {
-        title: 'Burkely Pettijohn - Projects',
-        projects: projects
+        title: 'Burkely Pettijohn - Portfolio',
+        headers: [
+            {
+                name: "About Me",
+                link: "/#about-me"
+            },
+            {
+                name: "Projects",
+                link: "/#projects"
+            },
+            {
+                name: "Experience",
+                link: "/#experience"
+            },
+            {
+                name: "Skills",
+                link: "/#skills"
+            }
+        ],
+        projects: projects,
+        jobs: jobs,
+        skills: skills
     });
 });
 
 // PROJECT PAGE - GET
 app.get('/projects/:project_id', function(req, res) {
     const project_id = req.params.project_id
-    if (!projects[project_id]) {
+    const project = projects[project_id]
+    if (!project) {
         return res.status(404).send('Project not found');
     } else {
         res.render('project', {
-            title: 'Burkely Pettijohn - Projects',
-            project: projects[project_id]
+            title: `Burkely Pettijohn - ${project["title"]}`,
+            headers: [
+                {
+                    name: "Home",
+                    link: "../../"
+                }
+                
+            ],
+            project: project
         });
     }
 });

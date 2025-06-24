@@ -33,7 +33,7 @@
     <table id="project_list">
         <tbody>
             {{#each projects}}
-            <tr>
+            <tr id="{{this.id}}">
                 <td class="project_image">
                     <a href="{{this.site}}"
                     {{#if this.new_tab}}target="_blank" rel="noopener noreferrer"{{/if}}>
@@ -82,11 +82,14 @@
 
 <div id="skills" class="observed-section">
     <h2>Skills</h2>
+    {{#each skills}}
+    <h4 id="skills_key">{{@key}}</h4>
     <ul>
-        {{#each skills}}
-        <li><img src="{{this.src}}" alt="{{this.alt}}" height="35px">{{this.name}}</li>
+        {{#each this}}
+        <li id="skill"><img src="{{this.src}}" alt="{{this.alt}}" height="55px">{{this.name}}</li>
         {{/each}}
     </ul>
+    {{/each}}
 </div>
 
 <script src="js/scroll-spy.js" type="text/javascript"></script>

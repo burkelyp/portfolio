@@ -1,6 +1,12 @@
 <div id="display_project">
     <h2>{{project.title}}</h2>
-    <p>{{project.description}}</p>
-    <a href="{{project.github}}" target='_blank' rel='noopener noreferrer'>GitHub Repository</a>
-    <img src="../../{{project.img_path}}" alt="{{project.title}} image">
+    <p>{{project.long_description}}</p>
+    <ul>
+        <h4>Highlights</h4>
+        {{#each project.features}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    <a href="{{project.link}}" target='_blank' rel='noopener noreferrer'>{{project.link_name}}</a>
+    <img src="../../{{project.img_path}}" alt="{{project.title}} image" width="{{project.width}}">
 </div>

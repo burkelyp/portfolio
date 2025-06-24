@@ -35,19 +35,19 @@ app.get('/', function(req, res) {
         headers: [
             {
                 name: "About Me",
-                link: "/#about-me"
+                link: "about-me"
             },
             {
                 name: "Projects",
-                link: "/#projects"
+                link: "projects"
             },
             {
                 name: "Experience",
-                link: "/#experience"
+                link: "experience"
             },
             {
                 name: "Skills",
-                link: "/#skills"
+                link: "skills"
             }
         ],
         projects: projects,
@@ -68,9 +68,8 @@ app.get('/projects/:project_id', function(req, res) {
             headers: [
                 {
                     name: "Home",
-                    link: "../../"
+                    link: `../../#${project.id}`
                 }
-                
             ],
             project: project
         });
